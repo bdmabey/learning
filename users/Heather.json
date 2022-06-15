@@ -1,0 +1,41 @@
+{
+  "username": "Heather",
+  "hashed_password": "VSuraGTHp7aaUC7RhUuSRcDhow8AiqoLKB2mJYX9sCU=",
+  "question_data": [
+    {
+      "question": "What is your name?",
+      "answer": "Tuesday",
+      "asked": false
+    },
+    {
+      "question": "How old are you?",
+      "answer": "",
+      "asked": false
+    },
+    {
+      "question": "What is your favorite color?",
+      "answer": "",
+      "asked": false
+    },
+    {
+      "question": "Where are you from?",
+      "answer": "",
+      "asked": false
+    },
+    {
+      "question": "What food do you like?",
+      "answer": "",
+      "asked": false
+    },
+    {
+      "question": "Did you go to college?",
+      "answer": "",
+      "asked": false
+    },
+    {
+      "question": "Did you graduate High School?",
+      "answer": "",
+      "asked": false
+    }
+  ]
+}

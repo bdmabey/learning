@@ -1,0 +1,9 @@
+What is your name?
+How old are you?
+What is your favorite color?
+Where are you from?
+What food do you like?
+Did you go to college?
+Did you graduate High School?
+What do you like to do for fun?
+What do you want to do when you grow up?
