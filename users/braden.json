@@ -1,10 +1,10 @@
 {
-  "username": "John",
-  "hashed_password": "VSuraGTHp7aaUC7RhUuSRcDhow8AiqoLKB2mJYX9sCU=",
+  "username": "braden",
+  "hashed_password": "Y5qZBRz3Se32y5VHTQmE1NK+q4Al5DhnI3fYS179Ar0=",
   "question_data": [
     {
       "question": "What is your name?",
-      "answer": "Tuesday",
+      "answer": "",
       "asked": false
     },
     {

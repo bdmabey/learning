@@ -11,11 +11,7 @@ mod question;
 mod chat;
 
 fn main() {
-    //testing_threads();
     start()
-    // question::load_questions();
-    // testing_json(); 
-    // reading_json()
 }
 
 fn testing() {
@@ -27,12 +23,6 @@ fn testing() {
 
     println!("{}", new_result)
 }
-
-//Lets play around with input threads and output threads through crossbeam.
-//This gonna get ugly.
-//Will also change the whole structure of the porgram.
-//Well this works quite well.
-
 
 fn testing_threads() {
     let (snd, rcv) = unbounded();
@@ -73,39 +63,3 @@ fn testing_threads() {
         });
     }).unwrap();
 }
-
-use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Serialize, Deserialize)]
-struct Fruits {
-    name: String,
-    apple: u8,
-    oranges: u8
-}
-
-    // fn testing_json() {
-    //     use std::{env, fs};
-    //     use std::fs::File;
-
-    //     let one = Fruits { name: String::from("HEather"), apple: 8, oranges: 10};
-    //     let two = Fruits { name: String::from("John"), apple: 98, oranges: 109};
-    //     let mut vec_fruits: Vec<Fruits> = Vec::new();
-
-    //     vec_fruits.push(one);
-    //     vec_fruits.push(two);
-
-    //     let ser = serde_json::to_string_pretty(&vec_fruits).unwrap();
-
-    //     std::fs::write("test.json", ser).unwrap();
-
-    // }
-
-
-    // fn reading_json() {
-    //     use std::{fs, env};
-
-    //     let text = std::fs::read_to_string("test.json").unwrap();
-    //     let result = serde_json::from_str::<Vec<Fruits>>(&text).unwrap();
-
-    //     println!("{:?}", result)
-    // }

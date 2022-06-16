@@ -1,5 +1,5 @@
 use crate::account_manager::User;
-use crate::{account_manager};
+use crate::account_manager;
 use crate::question;
 
 use core::panic;
@@ -8,26 +8,29 @@ use std::{thread, time::Duration};
 
 use chrono::prelude::*;
 
-enum Choice {
-    Load,
-    Save,
-    Quit
-}
-
 enum TimeOfDay {
     Morning(u8),
     Afternoon(u8),
     Night(u8)
 }
 
-/*
-    Ready to implement the main loop.
-    OR go figure out the create user
-    save is good though
-*/
 fn main_loop(user: &mut User) {
+    //quick save in case it is a new user.
+    save(&user);
     loop {
-        break
+        //now ready to make the beef of this app.
+        //No idea what it is for though.
+        //Daily tracker? - probably
+
+        match read_input() {
+            Input::Input(text) => {
+                match text.trim() {
+                    "save" | "Save" => save(&user),
+                    "quit" | "Quit" => break,
+                    _ => println!("IDK")
+                }
+            }
+        }
     }
 }
 
@@ -44,9 +47,6 @@ pub fn start() {
                         Ok(_) => {
                             println!("welcome, {}", user.username);
                             question::load_questions(&mut user);
-                            /*
-                                At this point all questions are loaded and we can proceed to the main loop.
-                            */
                             main_loop(&mut user)
                         },
                         Err(e) => {
@@ -58,7 +58,19 @@ pub fn start() {
                                 },
                                 "No Account Found" => {
                                     println!("No account was found.");
-                                    account_manager::create()
+                                    println!("Would you like to create one? Y/N");
+                                    match read_input() {
+                                        Input::Input(text) => {
+                                            match text.trim() {
+                                                "y" | "Y" => {
+                                                    user.create();
+                                                    question::load_questions(&mut user);
+                                                    main_loop(&mut user)
+                                                },
+                                                _ => println!("Ok see you later.")
+                                            }
+                                        },
+                                    }
                                 },
                                 _ => println!("{e}")
                             }

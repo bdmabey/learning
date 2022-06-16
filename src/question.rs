@@ -10,10 +10,6 @@ pub struct Questions {
     pub asked: bool
 }
 
-impl Questions {
-
-}
-
 pub fn load_questions(user: &mut User) {
     let questions = fs::read_to_string("questions.txt").unwrap();
     let vec_questions: Vec<&str> = questions.split("\r\n").collect();

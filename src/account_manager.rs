@@ -6,6 +6,7 @@ use serde::{Serialize, Deserialize};
 use sha2::Sha256;
 use sha2::Digest;
 
+use crate::chat::Input;
 use crate::chat::{self, read_input};
 use crate::question::Questions;
 
@@ -90,13 +91,44 @@ impl User {
         Err("No Account Found")
 
     }
+
+    pub fn create(&mut self) {
+        println!("Please enter the username you would like to use: ");
+        match read_input() {
+            Input::Input(text) => {
+                match text.trim() {
+                    _ => {
+                        println!("Your username is: {}", text);
+                        self.username = String::from(text.trim());
+                        println!("Please enter your password: ");
+                        match read_input() {
+                            Input::Input(text) => {
+                                let tmp_password = text;
+                                println!("Please re-enter your passowrd: ");
+                                match read_input() {
+                                    Input::Input(text) => {
+                                        if text.eq(&tmp_password){
+                                            let mut hasher = Sha256::new();
+                                            hasher.update(text);
+                                            let result = hasher.finalize();
+                                            let hashed_result = Base64::encode_string(&result);
+                                            self.hashed_password = hashed_result
+                                        } else {
+                                            println!("Passwords did not match. Taking you back.");
+                                            self.create()
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 pub fn logout() {
-
-}
-
-pub fn create() {
 
 }
 
