@@ -4,48 +4,53 @@
   "question_data": [
     {
       "question": "What is your name?",
-      "answer": "",
-      "asked": false
+      "answer": "Braden",
+      "asked": true
     },
     {
       "question": "How old are you?",
-      "answer": "",
-      "asked": false
+      "answer": "23",
+      "asked": true
     },
     {
       "question": "What is your favorite color?",
-      "answer": "",
-      "asked": false
+      "answer": "Black",
+      "asked": true
     },
     {
       "question": "Where are you from?",
-      "answer": "",
-      "asked": false
+      "answer": "Utah",
+      "asked": true
     },
     {
       "question": "What food do you like?",
-      "answer": "",
-      "asked": false
+      "answer": "Steak",
+      "asked": true
     },
     {
       "question": "Did you go to college?",
-      "answer": "",
-      "asked": false
+      "answer": "Sort of",
+      "asked": true
     },
     {
       "question": "Did you graduate High School?",
-      "answer": "",
-      "asked": false
+      "answer": "yes",
+      "asked": true
     },
     {
       "question": "What do you like to do for fun?",
-      "answer": "",
-      "asked": false
+      "answer": "Learn about computers",
+      "asked": true
     },
     {
       "question": "What do you want to do when you grow up?",
-      "answer": "",
-      "asked": false
+      "answer": "I don't know",
+      "asked": true
+    },
+    {
+      "question": "Does it work if I add new questions to this file?",
+      "answer": "Yes",
+      "asked": true
     }
   ]
 }
